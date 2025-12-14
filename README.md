@@ -1,5 +1,6 @@
 # IFLOW METADATA EXTRACTOR
-METADAT Extractor for PIPO to SAP Integration Suite Migration.
+METADATA Extractor for PIPO to SAP Integration Suite Migration.
+Or Call it as Template Registry
 
 ## Structure
 ```pgsql
@@ -9,6 +10,10 @@ iflow-metadata-extractor/
 ├── extractor_utils.py             # helper file
 ├── semantic_classifier.py         # helper file
 ├── semantic_schema.py             # helper file
+├── adapter_scanner.py             # helper file
+├── config.py                      # helper file
+├── identity_utils.py              # helper file
+├── manifest_parser.py             # helper file
 ├── enrich_metadata.py             # run this code second, llm will extract properly
 │
 ├── output/
@@ -67,9 +72,8 @@ Template Registry
 ---
 ### What happens if you run only `extractor.py`
 When you run: 
-```json
-extractor.py
-```
+`extractor.py`
+
 We will get deterministic, technical metadata only:
 What you already have now:
 - template_id (canonical, from MANIFEST.MF)
@@ -118,4 +122,5 @@ Exact rule
 - When you want intent-based selection
 - When you improve prompts / rules
 - When building the “AI iFlow Designer”
-- They are deliberately decoupled.
+They are deliberately decoupled.
+---
