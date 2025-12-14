@@ -1,0 +1,11 @@
+[project]
+name = "iflow-metadata-extractor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.27",
+    "python-dotenv>=1.2.1",
+    "sap-ai-sdk-gen>=5.9.0",
+]
