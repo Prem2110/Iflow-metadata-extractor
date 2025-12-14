@@ -1,5 +1,5 @@
 # IFLOW METADATA EXTRACTOR
-Extractor PIPO to SAP Integration Suite Migration.
+METADAT Extractor for PIPO to SAP Integration Suite Migration.
 
 ## Structure
 ```pgsql
@@ -36,11 +36,11 @@ Template Registry
 ```
 ---
 ### Pros
-✅ Accurate
-✅ Repeatable
-✅ No hallucination
-✅ Fully automatable
-✅ Works for 150 or 1,500 templates
+- ✅ Accurate
+- ✅ Repeatable
+- ✅ No hallucination
+- ✅ Fully automatable
+- ✅ Works for 150 or 1,500 templates
 ---
 ### Phase 1 — Deterministic Extraction
 - Parse all 150 iFlow ZIPs
@@ -67,10 +67,11 @@ Template Registry
 ---
 ### What happens if you run only `extractor.py`
 When you run: 
-```python python extractor.py
+```json
+extractor.py
 ```
 We will get deterministic, technical metadata only:
-✅ What you already have now:
+What you already have now:
 - template_id (canonical, from MANIFEST.MF)
 - package_id
 - iflow_id
@@ -78,15 +79,11 @@ We will get deterministic, technical metadata only:
 - mapping_count
 - complexity
 
-** This data is: **
+*** This data is: ***
 - 100% reliable
 - No LLM involved
 - Sufficient for cataloging, governance, packaging
 
-📌 If your immediate goal is:
-- Just list templates
-- Just deploy known templates
-- Just manage iFlows by ID
 
 ### What `enrich_metadata.py` adds
 - It does NOT replace extractor output. It augments it with semantic intelligence.
@@ -109,3 +106,16 @@ This layer is what enables:
  📌 Without enrich_metadata.py, the system is technical but not intelligent.
 
  ![alt text](image.png)
+
+---
+Exact rule
+🔁 Run `extractor.py`
+- When templates change
+- When you add/remove iFlow ZIPs
+- When you want fresh technical metadata
+
+🧠 Run `enrich_metadata.py`
+- When you want intent-based selection
+- When you improve prompts / rules
+- When building the “AI iFlow Designer”
+- They are deliberately decoupled.
